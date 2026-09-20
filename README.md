@@ -59,13 +59,13 @@ animated-buttons/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git clone https://github.com/sajidlulaniya/animated-buttons-ui.git
 ```
 
 ### 2. Open the project
 
 ```bash
-cd YOUR-REPOSITORY
+cd animated-buttons-ui
 ```
 
 ### 3. Run it
