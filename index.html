@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Modern animated button collection using HTML, CSS and JavaScript."
+  />
+
+  <title>Animated Buttons</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="background background-one"></div>
+    <div class="background background-two"></div>
+
+    <section class="container">
+
+      <div class="heading">
+        <span class="eyebrow">UI COMPONENTS</span>
+
+        <h1>
+          Animated
+          <span>Buttons</span>
+        </h1>
+
+        <p>
+          Five modern button interactions built with pure
+          HTML, CSS and JavaScript.
+        </p>
+      </div>
+
+      <div class="buttons-grid">
+
+        <!-- =================================================
+             BUTTON 01 — MAGNETIC
+        ================================================== -->
+
+        <article class="button-card">
+
+          <div class="card-number">01</div>
+
+          <div class="button-preview">
+
+            <button class="btn magnetic-btn">
+
+              <span class="magnetic-glow"></span>
+
+              <span class="btn-content">
+                Explore
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </span>
+
+            </button>
+
+          </div>
+
+          <div class="card-info">
+            <h2>Magnetic Glow</h2>
+            <p>Interactive cursor-following movement.</p>
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BUTTON 02 — GRADIENT SLIDE
+        ================================================== -->
+
+        <article class="button-card">
+
+          <div class="card-number">02</div>
+
+          <div class="button-preview">
+
+            <button class="btn gradient-btn">
+
+              <span class="gradient-layer"></span>
+
+              <span class="btn-content">
+                Get Started
+
+                <span class="arrow-circle">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                    />
+                  </svg>
+                </span>
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div class="card-info">
+            <h2>Gradient Flow</h2>
+            <p>Smooth animated gradient interaction.</p>
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BUTTON 03 — BORDER TRACE
+        ================================================== -->
+
+        <article class="button-card">
+
+          <div class="card-number">03</div>
+
+          <div class="button-preview">
+
+            <button class="btn border-btn">
+
+              <span class="border-animation"></span>
+
+              <span class="border-inner">
+
+                <span class="status-dot"></span>
+
+                Live Preview
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div class="card-info">
+            <h2>Border Trace</h2>
+            <p>Animated luminous border effect.</p>
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BUTTON 04 — RIPPLE
+        ================================================== -->
+
+        <article class="button-card">
+
+          <div class="card-number">04</div>
+
+          <div class="button-preview">
+
+            <button class="btn ripple-btn">
+
+              <span class="btn-content">
+
+                <svg
+                  class="download-icon"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+
+                Download
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div class="card-info">
+            <h2>Dynamic Ripple</h2>
+            <p>Click-position responsive ripple animation.</p>
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BUTTON 05 — SUCCESS MORPH
+        ================================================== -->
+
+        <article class="button-card">
+
+          <div class="card-number">05</div>
+
+          <div class="button-preview">
+
+            <button class="btn success-btn">
+
+              <span class="success-background"></span>
+
+              <span class="default-state">
+
+                Submit
+
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+
+              </span>
+
+              <span class="loading-state">
+                <span class="loader"></span>
+              </span>
+
+              <span class="completed-state">
+
+                <svg viewBox="0 0 24 24">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+
+                Done
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div class="card-info">
+            <h2>Success Morph</h2>
+            <p>Loading-to-complete micro interaction.</p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

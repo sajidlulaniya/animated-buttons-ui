@@ -1,0 +1,1137 @@
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root {
+  --background: #070910;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-border: rgba(255, 255, 255, 0.08);
+
+  --text: #f8f9ff;
+  --text-muted: #9298a8;
+
+  --purple: #7c5cff;
+  --violet: #a855f7;
+  --blue: #4f7cff;
+  --cyan: #26d5ff;
+  --green: #45e0a8;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+
+  --transition:
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #14182a 0%,
+      #090b13 38%,
+      #05060a 100%
+    );
+
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+.page {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 28px 24px;
+
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 5;
+
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   BACKGROUND BLOBS
+========================================================== */
+
+.background {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  opacity: 0.16;
+
+  pointer-events: none;
+}
+
+.background-one {
+  width: 360px;
+  height: 360px;
+
+  background: #7c5cff;
+
+  top: -160px;
+  left: -140px;
+
+  animation: backgroundFloatOne 8s ease-in-out infinite;
+}
+
+.background-two {
+  width: 360px;
+  height: 360px;
+
+  background: #2176ff;
+
+  right: -140px;
+  bottom: -160px;
+
+  animation: backgroundFloatTwo 10s ease-in-out infinite;
+}
+
+@keyframes backgroundFloatOne {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(70px, 55px);
+  }
+
+}
+
+@keyframes backgroundFloatTwo {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-75px, -50px);
+  }
+
+}
+
+
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.heading {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 12px;
+
+  margin-bottom: 10px;
+
+  border:
+    1px solid rgba(124, 92, 255, 0.25);
+
+  border-radius: 999px;
+
+  background:
+    rgba(124, 92, 255, 0.07);
+
+  color: #a99aff;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.heading h1 {
+  font-size: clamp(34px, 4vw, 52px);
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.heading h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #8568ff,
+      #ae6cff,
+      #5ea8ff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.heading p {
+  max-width: 500px;
+
+  margin: 12px auto 0;
+
+  color: var(--text-muted);
+
+  line-height: 1.55;
+
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.buttons-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 14px;
+}
+
+.button-card {
+  position: relative;
+
+  grid-column: span 2;
+
+  min-height: 215px;
+
+  padding: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.025)
+    );
+
+  border:
+    1px solid var(--surface-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  backdrop-filter: blur(20px);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s var(--transition),
+    border-color 0.45s ease,
+    background 0.45s ease;
+}
+
+.button-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.button-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.075),
+      rgba(255,255,255,0.035)
+    );
+}
+
+.card-number {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  color:
+    rgba(255,255,255,0.18);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   BUTTON PREVIEW
+========================================================== */
+
+.button-preview {
+  height: 125px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ==========================================================
+   CARD INFO
+========================================================== */
+
+.card-info {
+  padding: 0 2px;
+}
+
+.card-info h2 {
+  margin-bottom: 4px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-info p {
+  font-size: 10.5px;
+
+  line-height: 1.5;
+
+  color:
+    var(--text-muted);
+}
+
+
+/* ==========================================================
+   GLOBAL BUTTON
+========================================================== */
+
+.btn {
+  position: relative;
+
+  border: 0;
+
+  outline: none;
+
+  font-family: inherit;
+
+  color: white;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.btn-content {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ==========================================================
+   BUTTON 01
+   MAGNETIC
+========================================================== */
+
+.magnetic-btn {
+  width: 145px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7657ff,
+      #9a5dff
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(124, 92, 255, 0.25),
+    inset 0 1px 0
+    rgba(255,255,255,0.23);
+
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.3s ease;
+}
+
+.magnetic-btn:hover {
+  box-shadow:
+    0 18px 45px
+    rgba(124, 92, 255, 0.42),
+    inset 0 1px 0
+    rgba(255,255,255,0.3);
+}
+
+.magnetic-btn .btn-content {
+  gap: 10px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.magnetic-btn svg {
+  width: 16px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  transition:
+    transform 0.35s var(--transition);
+}
+
+.magnetic-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.magnetic-glow {
+  position: absolute;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.4);
+
+  filter: blur(24px);
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  pointer-events: none;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.magnetic-btn:hover
+.magnetic-glow {
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+}
+
+
+/* ==========================================================
+   BUTTON 02
+   GRADIENT FLOW
+========================================================== */
+
+.gradient-btn {
+  width: 158px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  background: #11131b;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.1);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0,0,0,0.35);
+
+  transition:
+    transform 0.35s
+    var(--transition),
+    border-color 0.35s ease;
+}
+
+.gradient-layer {
+  position: absolute;
+
+  width: 240%;
+  height: 240%;
+
+  top: 100%;
+  left: -70%;
+
+  border-radius: 45%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1c67ff,
+      #7048ff,
+      #b45aff
+    );
+
+  transform: rotate(12deg);
+
+  transition:
+    top 0.65s var(--transition),
+    transform 0.65s var(--transition);
+}
+
+.gradient-btn:hover
+.gradient-layer {
+  top: -65%;
+
+  transform: rotate(0deg);
+}
+
+.gradient-btn:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    transparent;
+}
+
+.gradient-btn
+.btn-content {
+  gap: 11px;
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+}
+
+.arrow-circle {
+  width: 27px;
+  height: 27px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  background:
+    rgba(255,255,255,0.09);
+
+  transition:
+    transform 0.4s
+    var(--transition),
+    background 0.4s ease;
+}
+
+.gradient-btn:hover
+.arrow-circle {
+  transform:
+    translateX(4px)
+    rotate(-5deg);
+
+  background:
+    rgba(255,255,255,0.2);
+}
+
+.arrow-circle svg {
+  width: 14px;
+
+  fill: none;
+
+  stroke: white;
+
+  stroke-width: 2;
+}
+
+
+/* ==========================================================
+   BUTTON 03
+   BORDER TRACE
+========================================================== */
+
+.border-btn {
+  width: 155px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  padding: 1px;
+
+  overflow: hidden;
+
+  background:
+    transparent;
+}
+
+.border-animation {
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    conic-gradient(
+      transparent 0deg,
+      transparent 130deg,
+      #5e78ff 180deg,
+      #b662ff 230deg,
+      transparent 285deg
+    );
+
+  opacity: 0.35;
+
+  animation:
+    rotateBorder 4s
+    linear infinite;
+}
+
+.border-btn:hover
+.border-animation {
+  opacity: 1;
+
+  animation-duration:
+    1.7s;
+}
+
+@keyframes rotateBorder {
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+}
+
+.border-inner {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 13px;
+
+  background: #0c0e15;
+
+  color: #f7f7fb;
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #55e6ad;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(85,230,173,0.1),
+    0 0 15px
+    rgba(85,230,173,0.7);
+
+  animation:
+    statusPulse 2s
+    ease infinite;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px
+      rgba(85,230,173,0.08),
+      0 0 10px
+      rgba(85,230,173,0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 6px
+      rgba(85,230,173,0.14),
+      0 0 20px
+      rgba(85,230,173,0.75);
+  }
+
+}
+
+
+/* ==========================================================
+   BUTTON 04
+   RIPPLE
+========================================================== */
+
+.ripple-btn {
+  width: 155px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f9ff,
+      #dfe4ff
+    );
+
+  color: #151824;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0,0,0,0.25);
+
+  transition:
+    transform 0.35s
+    var(--transition),
+    box-shadow 0.35s ease;
+}
+
+.ripple-btn:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 17px 38px
+    rgba(0,0,0,0.35);
+}
+
+.ripple-btn
+.btn-content {
+  gap: 9px;
+
+  font-size: 12.5px;
+
+  font-weight: 650;
+}
+
+.download-icon {
+  width: 16px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  transition:
+    transform 0.35s
+    var(--transition);
+}
+
+.ripple-btn:hover
+.download-icon {
+  animation:
+    downloadMove 0.7s
+    var(--transition);
+}
+
+@keyframes downloadMove {
+
+  30% {
+    transform:
+      translateY(4px);
+  }
+
+  60% {
+    transform:
+      translateY(-2px);
+  }
+
+}
+
+.ripple-element {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(105, 78, 255, 0.25);
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  pointer-events: none;
+
+  animation:
+    rippleAnimation
+    0.75s ease-out
+    forwards;
+}
+
+@keyframes rippleAnimation {
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      scale(35);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   BUTTON 05
+   SUCCESS MORPH
+========================================================== */
+
+.success-btn {
+  width: 150px;
+  height: 50px;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7154ff,
+      #9c5dff
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(124,92,255,0.25);
+
+  transition:
+    width 0.5s var(--transition),
+    border-radius 0.5s
+    var(--transition),
+    transform 0.3s ease,
+    background 0.4s ease;
+}
+
+.success-btn:hover:not(.loading):not(.completed) {
+  transform:
+    translateY(-3px);
+}
+
+.default-state,
+.loading-state,
+.completed-state {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s
+    var(--transition);
+}
+
+.default-state {
+  gap: 10px;
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+}
+
+.default-state svg,
+.completed-state svg {
+  width: 16px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2.2;
+}
+
+.loading-state {
+  opacity: 0;
+
+  transform:
+    scale(0.7);
+}
+
+.completed-state {
+  opacity: 0;
+
+  transform:
+    scale(0.7);
+
+  gap: 7px;
+
+  font-size: 12.5px;
+
+  font-weight: 650;
+}
+
+.loader {
+  width: 19px;
+  height: 19px;
+
+  border:
+    2px solid
+    rgba(255,255,255,0.25);
+
+  border-top-color:
+    white;
+
+  border-radius: 50%;
+
+  animation:
+    loaderSpin
+    0.7s linear infinite;
+}
+
+@keyframes loaderSpin {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* LOADING */
+
+.success-btn.loading {
+  width: 50px;
+
+  border-radius: 50%;
+}
+
+.success-btn.loading
+.default-state {
+  opacity: 0;
+
+  transform:
+    scale(0.7);
+}
+
+.success-btn.loading
+.loading-state {
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+
+/* COMPLETE */
+
+.success-btn.completed {
+  width: 130px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #21bb82,
+      #48e2aa
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(69,224,168,0.22);
+}
+
+.success-btn.completed
+.loading-state,
+.success-btn.completed
+.default-state {
+  opacity: 0;
+}
+
+.success-btn.completed
+.completed-state {
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.btn:focus-visible {
+  outline:
+    3px solid
+    rgba(111, 91, 255, 0.45);
+
+  outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   SHORT LAPTOP SCREENS
+========================================================== */
+
+@media (max-height: 750px) and (min-width: 901px) {
+
+  .page {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .heading {
+    margin-bottom: 20px;
+  }
+
+  .heading h1 {
+    font-size: 38px;
+  }
+
+  .heading p {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .button-card {
+    min-height: 195px;
+    padding: 14px;
+  }
+
+  .button-preview {
+    height: 112px;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+  .page {
+    align-items: flex-start;
+
+    padding:
+      50px 20px;
+  }
+
+  .buttons-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .button-card {
+    grid-column:
+      span 1;
+  }
+
+  .button-card:nth-child(4) {
+    grid-column:
+      span 1;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .page {
+    padding:
+      45px 16px;
+  }
+
+  .heading {
+    margin-bottom:
+      28px;
+  }
+
+  .heading h1 {
+    font-size:
+      36px;
+  }
+
+  .heading p {
+    font-size:
+      12px;
+  }
+
+  .buttons-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .button-card {
+    min-height:
+      210px;
+  }
+
+}
